@@ -1,12 +1,33 @@
 import reports
 import unittest
 
-def getSorted():
-    return ['Age of Empires', 'Command & Conquer', 'Counter-Strike', 'Counter-Strike: Condition Zero',
-           'Crysis', 'Diablo II', 'Diablo III', 'Doom 3', 'EverQuest', "Garry's Mod", 'Guild Wars', 'Half-Life',
-           'Half-Life 2', 'Minecraft', 'Populous', 'StarCraft', 'StarCraft II', 'Terraria', 'The Sims', 'The Sims 2',
-           'The Sims 3', 'Warcraft III: Reign of Chaos', 'Warhammer 40,000: Dawn of War (including expansions)',
-           'World of Warcraft']
+
+def get_sorted():
+    return ['Age of Empires',
+            'Command & Conquer',
+            'Counter-Strike',
+            'Counter-Strike: Condition Zero',
+            'Crysis',
+            'Diablo II',
+            'Diablo III',
+            'Doom 3',
+            'EverQuest',
+            "Garry's Mod",
+            'Guild Wars',
+            'Half-Life',
+            'Half-Life 2',
+            'Minecraft',
+            'Populous',
+            'StarCraft',
+            'StarCraft II',
+            'Terraria',
+            'The Sims',
+            'The Sims 2',
+            'The Sims 3',
+            'Warcraft III: Reign of Chaos',
+            'Warhammer 40,000: Dawn of War (including expansions)',
+            'World of Warcraft']
+
 
 class Tester(unittest.TestCase):
     points = 0
@@ -15,41 +36,42 @@ class Tester(unittest.TestCase):
     def test_1_count_games(self):
         result = reports.count_games(self.input_file)
         self.assertEqual(result, 24)
-        if(result == 24):
+        if result == 24:
             self.points += 2
             print("Function 'count_games' is passed. 2 points.")
 
     def test_2_decide(self):
         result = reports.decide(self.input_file, 2000)
         self.assertTrue(result)
-        if(result == True):
+        if result:
             self.points += 2
             print("Function 'decide' is passed. 2 points.")
 
     def test_3_get_latest(self):
         result = reports.get_latest(self.input_file)
-        self.assertEqual(result, "Diablo III")
-        if(result == "Diablo III"):
+        expected = "Diablo III"
+        self.assertEqual(result, expected)
+        if result == expected:
             self.points += 2
             print("Function 'get_latest' is passed. 2 points.")
 
     def test_4_count_by_genre(self):
         result = reports.count_by_genre(self.input_file, "First-person shooter")
         self.assertEqual(result, 6)
-        if (result == 6):
+        if result == 6:
             self.points += 2
             print("Function 'count_by_genre' is passed. 2 points.")
 
     def test_5_get_line_number_by_title(self):
         result = reports.get_line_number_by_title(self.input_file, "Counter-Strike")
         self.assertEqual(result, 6)
-        if (result == 6):
+        if result == 6:
             self.points += 2
             print("Function 'get_line_number_by_title' is passed. 2 points.")
 
     def test_bonus_1_sort_abc(self):
         result = reports.sort_abc(self.input_file)
-        expected_result = getSorted()
+        expected_result = get_sorted()
 
         correct = True
         self.assertEqual(len(result), len(expected_result))
@@ -87,7 +109,7 @@ class Tester(unittest.TestCase):
     def test_bonus_3_when_was_top_sold_fps(self):
         result = reports.when_was_top_sold_fps(self.input_file)
         self.assertEqual(result, "Counter-Strike")
-        if (result == "Counter-Strike"):
+        if result == "Counter-Strike":
             self.points += 1
             print("Bonus function 'when_was_top_sold_fps' is passed. 1 points.")
 
