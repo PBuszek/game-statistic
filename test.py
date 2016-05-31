@@ -19,7 +19,7 @@ def get_sorted():
             'Minecraft',
             'Populous',
             'StarCraft',
-            'StarCraft II',
+            'StarCraft II: Wings of Liberty',
             'Terraria',
             'The Sims',
             'The Sims 2',
