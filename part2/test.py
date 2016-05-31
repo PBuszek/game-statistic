@@ -104,12 +104,6 @@ class Tester(unittest.TestCase):
             self.points += 1
             print("Bonus function 'get_date_ordered' is passed. 1 points.")
 
-    def test_check_module_printing(self):
-        import printing
-
-    def test_check_module_export(self):
-        import export
-
 
 def main():
     unittest.main()
