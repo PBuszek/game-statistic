@@ -108,8 +108,8 @@ class Tester(unittest.TestCase):
 
     def test_bonus_3_when_was_top_sold_fps(self):
         result = reports.when_was_top_sold_fps(self.input_file)
-        self.assertEqual(result, "Counter-Strike")
-        if result == "Counter-Strike":
+        self.assertEqual(result, 1999)
+        if result == 1999:
             self.points += 1
             print("Bonus function 'when_was_top_sold_fps' is passed. 1 points.")
 
