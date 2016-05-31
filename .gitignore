@@ -5,6 +5,3 @@ __pycache__/
 
 # OS-X
 .DS_Store
-report.py
-export.py
-printing.py
