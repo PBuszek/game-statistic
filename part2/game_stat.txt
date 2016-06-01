@@ -19,6 +19,6 @@ Doom 3	3.5	2004	First-person shooter	Activision
 EverQuest	3.5	1999	RPG	Sony Online Entertainment
 Age of Empires	3	1997	Real-time strategy	Microsoft
 Command & Conquer	3	1995	Real-time strategy	Virgin Interactive
-Crysis  3	2007	First-person shooter	Electronic Arts
+Crysis	3	2007	First-person shooter	Electronic Arts
 Warcraft III: Reign of Chaos	3	2002	Real-time strategy	Blizzard Entertainment
 Counter-Strike: Condition Zero	2.9	2004	First-person shooter	Valve Corporation
