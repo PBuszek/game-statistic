@@ -52,15 +52,15 @@ class Tester(unittest.TestCase):
 
     def test_2_sum_sold(self):
         result = reports.sum_sold(self.input_file)
-        self.assertEqual(result, 183.66)
-        if result == 183.66:
+        self.assertEqual(result, 187.16)
+        if result == 187.16:
             self.points += 2
             print("Function 'sum_sold' is passed. 2 points.")
 
     def test_3_get_selling_avg(self):
         result = reports.get_selling_avg(self.input_file)
-        self.assertEqual(result, 7.6525)
-        if result == 7.6525:
+        self.assertEqual(result, 7.798333333333333)
+        if result == 7.798333333333333:
             self.points += 2
             print("Function 'get_selling_avg' is passed. 2 points.")
 
