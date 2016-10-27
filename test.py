@@ -30,44 +30,40 @@ def get_sorted():
 
 
 class Tester(unittest.TestCase):
-    points = 0
     input_file = "game_stat.txt"
 
     def test_1_count_games(self):
         result = reports.count_games(self.input_file)
         self.assertEqual(result, 24)
         if result == 24:
-            self.points += 2
-            print("Function 'count_games' is passed. 2 points.")
+            print("Function 'count_games' is passed.")
 
     def test_2_decide(self):
         result = reports.decide(self.input_file, 2000)
         self.assertTrue(result)
         if result:
-            self.points += 2
-            print("Function 'decide' is passed. 2 points.")
+            print("Function 'decide' is passed.")
 
     def test_3_get_latest(self):
         result = reports.get_latest(self.input_file)
         expected = "Diablo III"
         self.assertEqual(result, expected)
         if result == expected:
-            self.points += 2
-            print("Function 'get_latest' is passed. 2 points.")
+            print("Function 'get_latest' is passed.")
 
     def test_4_count_by_genre(self):
-        result = reports.count_by_genre(self.input_file, "First-person shooter")
+        result = reports.count_by_genre(
+            self.input_file, "First-person shooter")
         self.assertEqual(result, 6)
         if result == 6:
-            self.points += 2
-            print("Function 'count_by_genre' is passed. 2 points.")
+            print("Function 'count_by_genre' is passed.")
 
     def test_5_get_line_number_by_title(self):
-        result = reports.get_line_number_by_title(self.input_file, "Counter-Strike")
+        result = reports.get_line_number_by_title(
+            self.input_file, "Counter-Strike")
         self.assertEqual(result, 6)
         if result == 6:
-            self.points += 2
-            print("Function 'get_line_number_by_title' is passed. 2 points.")
+            print("Function 'get_line_number_by_title' is passed.")
 
     def test_bonus_1_sort_abc(self):
         result = reports.sort_abc(self.input_file)
@@ -84,8 +80,7 @@ class Tester(unittest.TestCase):
                 correct = False
 
         if correct:
-            self.points += 1
-            print("Bonus function 'sort_abc' is passed. 1 points.")
+            print("Bonus function 'sort_abc' is passed.")
 
     def test_bonus_2_get_genres(self):
         result = reports.get_genres(self.input_file)
@@ -103,15 +98,13 @@ class Tester(unittest.TestCase):
                 correct = False
 
         if correct:
-            self.points += 1
-            print("Bonus function 'get_genres' is passed. 1 points.")
+            print("Bonus function 'get_genres' is passed.")
 
     def test_bonus_3_when_was_top_sold_fps(self):
         result = reports.when_was_top_sold_fps(self.input_file)
         self.assertEqual(result, 1999)
         if result == 1999:
-            self.points += 1
-            print("Bonus function 'when_was_top_sold_fps' is passed. 1 points.")
+            print("Bonus function 'when_was_top_sold_fps' is passed.")
 
 
 def main():
