@@ -87,15 +87,14 @@ class Tester(unittest.TestCase):
         expected_result = ["Action-adventure", "First-person shooter", "Real-time strategy", "RPG", "Sandbox",
                            "Simulation", "Survival game"]
 
-        correct = True
         self.assertEqual(len(result), len(expected_result))
-        if len(result) != len(expected_result):
-            correct = False
+        correct = len(result) == len(expected_result)
 
-        for i in range(0, min(len(result), len(expected_result))):
-            self.assertEqual(result[i], expected_result[i])
-            if result[i] != expected_result[i]:
-                correct = False
+        result_set, expected_set = frozenset(result), frozenset(expected_result)
+        self.assertEqual(result_set, expected_set)
+        if result_set != expected_set:
+            print("result of get_genres was: {res}".format(res=result))
+            correct = False
 
         if correct:
             print("Bonus function 'get_genres' is passed.")
