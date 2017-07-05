@@ -84,15 +84,16 @@ class Tester(unittest.TestCase):
 
     def test_bonus_2_get_genres(self):
         result = reports.get_genres(self.input_file)
-        expected_result = ["Action-adventure", "First-person shooter", "Real-time strategy", "RPG", "Sandbox",
-                           "Simulation", "Survival game"]
+        expected_result = sorted(["Action-adventure", "First-person shooter",
+                                  "Real-time strategy", "RPG", "Sandbox",
+                                  "Simulation", "Survival game"])
 
         self.assertEqual(len(result), len(expected_result))
         correct = len(result) == len(expected_result)
 
-        result_set, expected_set = frozenset(result), frozenset(expected_result)
-        self.assertEqual(result_set, expected_set)
-        if result_set != expected_set:
+        sorted_result = sorted(result)
+        self.assertEqual(sorted_result, expected_result)
+        if sorted_result != expected_result:
             print("result of get_genres was: {res}".format(res=result))
             correct = False
 
